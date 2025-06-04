@@ -1,8 +1,8 @@
 const express = require("express")
 const router = express.Router()
 
-const {buscarCategorias, buscarCategoria} = require('../categoria/buscar_categoria.js')
-const {incluirCategoria} = require('../categoria/inserir_categoria.js')
+const {buscarCategorias, buscarCategoria} = require('../DAO/categoria/buscar_categoria.js')
+const {incluirCategoria} = require('../DAO/categoria/inserir_categoria.js')
 
 router.get('/categorias', async (req, res) =>{
     let categorias = await buscarCategorias()
@@ -22,4 +22,4 @@ router.post('/', async (req, res) =>{
     res.json(result)
 })
 
-module.exports = {router}
+module.exports = router

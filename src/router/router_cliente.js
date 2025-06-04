@@ -1,10 +1,10 @@
 const express = require("express")
 const router = express.Router()
 
-const {buscarClientes, buscarCliente} = require('../cliente/buscar_cliente.js')
-const {incluirCliente} = require('../cliente/inserir_cliente.js')
+const {buscarClientes, buscarCliente} = require('../DAO/cliente/buscar_cliente.js')
+const {incluirCliente} = require('../DAO/cliente/inserir_cliente.js')
 
-router.get('/clientes', async (req, res) =>{
+router.get('/', async (req, res) =>{
     let clientes = await buscarClientes()
     res.json(clientes)
 })
@@ -22,4 +22,4 @@ router.post('/', async (req, res) =>{
     res.json(result)
 })
 
-module.exports = {router}
+module.exports = router

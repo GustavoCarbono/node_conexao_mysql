@@ -1,8 +1,7 @@
 const express = require("express")
 const router = express.Router()
 
-const {buscarStatuss, buscarStatus} = require('../status/buscar_status.js')
-const {incluirStatus} = require('../status/inserir_status.js')
+const {buscarStatuss, buscarStatus} = require('../DAO/status/buscar_status.js')
 
 router.get('/statuss', async (req, res) =>{
     let statuss = await buscarStatuss()

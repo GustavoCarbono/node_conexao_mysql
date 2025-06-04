@@ -1,8 +1,8 @@
 const express = require("express")
 const router = express.Router()
 
-const {buscarEnderecos, buscarEndereco} = require('../endereco/buscar_endereco.js')
-const {incluirEndereco} = require('../endereco/inserir_endereco.js')
+const {buscarEnderecos, buscarEndereco} = require('../DAO/endereco/buscar_endereco.js')
+const {incluirEndereco} = require('../DAO/endereco/inserir_endereco.js')
 
 router.get('/enderecos', async (req, res) =>{
     let enderecos = await buscarEnderecos()
@@ -22,4 +22,4 @@ router.post('/', async (req, res) =>{
     res.json(result)
 })
 
-module.exports = {router}
+module.exports = router

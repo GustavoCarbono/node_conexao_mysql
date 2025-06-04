@@ -1,11 +1,11 @@
 const express = require("express")
 const router = express.Router()
 
-const {buscarProduto, buscarProduto} = require('../produto/buscar_produto.js')
-const {incluirProduto} = require('../produto/inserir_produto.js')
+const {buscarProdutos, buscarProduto} = require('../DAO/produto/buscar_produto.js')
+const {incluirProduto} = require('../DAO/produto/inserir_produto.js')
 
 router.get('/produtos', async (req, res) =>{
-    let clientes = await buscarProduto()
+    let clientes = await buscarProdutos()
     res.json(clientes)
 })
 

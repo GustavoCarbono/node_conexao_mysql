@@ -1,11 +1,11 @@
 const express = require("express")
 const router = express.Router()
 
-const {buscarItemPedido, buscarItemPedido} = require('../itempedido/buscar_itempedido.js')
-const {incluirItemPedido} = require('../itempedido/inserir_itempedido.js')
+const {buscarItemPedidos, buscarItemPedido} = require('../DAO/itempedido/buscar_itempedido.js')
+const {incluirItemPedido} = require('../DAO/itempedido/inserir_itempedido.js')
 
 router.get('/itempedidos', async (req, res) =>{
-    let clientes = await buscarItemPedido()
+    let clientes = await buscarItemPedidos()
     res.json(clientes)
 })
 
@@ -22,4 +22,4 @@ router.post('/', async (req, res) =>{
     res.json(result)
 })
 
-module.exports = {router}
+module.exports = router
