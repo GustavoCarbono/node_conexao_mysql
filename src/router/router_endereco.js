@@ -18,14 +18,14 @@ router.get('/:codigo', async (req, res) =>{
 
 router.post('/', async (req, res) =>{
     let {id, logradouro, cep, numero, bairro,  cidade} = req.body
-    const infos = [id, id_pedido, id_produto, qnt]
+    const infos = [id, logradouro, cep, numero, bairro,  cidade]
     let result = await incluirEndereco(infos)
     res.json(result)
 })
 
 router.put('/', async (req, res) =>{
-    let {id, id_pedido, id_produto, qnt} = req.body
-    const infos = [id, id_pedido, id_produto, qnt]
+    let {id, logradouro, cep, numero, bairro,  cidade} = req.body
+    const infos = [id, logradouro, cep, numero, bairro,  cidade]
     let result = await editarIntegralmenteEndereco(infos, codigo)
     res.status(200).json(result)
 })

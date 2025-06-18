@@ -13,22 +13,22 @@ const {conexao, closeConexao, testarConexao} = require('./src/DAO/conexao.js')
 const app = express()
 env.config()
 
+
 app.use('/firma/1.0.0/cliente', routerCliente)
 app.use('/firma/1.0.0/categoria', routerCategoria)
 app.use('/firma/1.0.0/endereco', routerEndereco)
 app.use('/firma/1.0.0/itempedido', routerItemPedido)
-//app.use('/firma/1.0.0/pedido', routerPedido)
-//app.use('/firma/1.0.0/produto', routerProduto)
-//app.use('/firma/1.0.0/status', routerStatus)
+app.use('/firma/1.0.0/pedido', routerPedido)
+app.use('/firma/1.0.0/produto', routerProduto)
+app.use('/firma/1.0.0/status', routerStatus)
 
 app.use(
-    express.urlencoded({
-        extended: true
-    })
-  )
-  
-  app.use(express.json())
-  
+  express.urlencoded({
+      extended: true
+  })
+)
+
+app.use(express.json())
 
 
 app.get('/', (req, res) => {
