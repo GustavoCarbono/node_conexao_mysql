@@ -2,7 +2,7 @@ const {conexao} = require('../conexao.js')
 
 
 async function buscarEnderecos(){
-    const sql = `SELECT * FROM tbl_enderecos;`
+    const sql = `SELECT * FROM tbl_endereco;`
     
     const conn = await conexao()
     try {

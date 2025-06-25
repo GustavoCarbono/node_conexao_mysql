@@ -14,13 +14,13 @@ const app = express()
 env.config()
 
 
-app.use('/firma/1.0.0/cliente', routerCliente)
-app.use('/firma/1.0.0/categoria', routerCategoria)
-app.use('/firma/1.0.0/endereco', routerEndereco)
-app.use('/firma/1.0.0/itempedido', routerItemPedido)
-app.use('/firma/1.0.0/pedido', routerPedido)
-app.use('/firma/1.0.0/produto', routerProduto)
-app.use('/firma/1.0.0/status', routerStatus)
+app.use('/cliente', routerCliente)
+app.use('/categoria', routerCategoria)
+app.use('/endereco', routerEndereco)
+app.use('/itempedido', routerItemPedido)
+app.use('/pedido', routerPedido)
+app.use('/produto', routerProduto)
+app.use('/status', routerStatus)
 
 app.use(
   express.urlencoded({
